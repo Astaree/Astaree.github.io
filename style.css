@@ -51,12 +51,12 @@ h2 {
 
 #containerL {
   z-index: 50;
-  background-image: url("./img/bg1.webp");
+  background-image: url("./bg1.webp");
 }
 
 #containerR {
   z-index: 50;
-  background-image: url("./img/bg2.webp");
+  background-image: url("./bg2.webp");
 }
 
 a {
