@@ -24,6 +24,34 @@ body * {
   height: 29.7cm;
 }
 
-p{
-    color:red;
+p {
+  color: red;
+}
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  @page :header {
+    display: none;
+  }
+
+  @page :footer {
+    display: none;
+  }
+  /* Hide elements not to be printed */
+  body * {
+    visibility: hidden;
+  }
+
+  #print-content,
+  #print-content * {
+    visibility: visible;
+  }
 }

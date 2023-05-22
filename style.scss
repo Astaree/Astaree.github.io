@@ -9,7 +9,11 @@ body {
   font-size: 14px;
 }
 
-.page {
+#print-content{
+  margin: auto;
+}
+
+.page1 {
   position: relative;
   background: white;
   display: grid;
@@ -44,7 +48,7 @@ img {
 
 hr {
   margin: 10px 0;
-  border:1px solid black;
+  border: 1px solid black;
 }
 
 h1 {
@@ -57,11 +61,40 @@ h2 {
   font-size: 28px;
 }
 
-
 button {
   font-size: 20px;
   margin: 5px 0px 0 15px;
   display: list-item;
 
   width: 100px;
+}
+
+@media print {
+  @page {
+    size: A4;
+  }
+
+  @page :header {
+    display: none;
+  }
+
+  @page :footer {
+    display: none;
+  }
+
+  body *:not(#print-content) {
+    visibility: hidden;
+  }
+  body #print-content,
+  body #print-content * {
+    visibility: visible;
+  }
+  #print-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    padding: 0;
+    margin: 0;
+  }
 }

@@ -1,28 +1,48 @@
 body * {
   visibility: hidden;
-  background: #cccccc;
+  background: #ccc;
   overflow: visible;
   top: 0;
   left: 0;
 }
-
 .page {
   visibility: visible;
   position: absolute;
   top: 0;
   left: 0;
-  background: white;
+  background: #fff;
   display: block;
   margin: 0 auto;
   margin-bottom: 0.5cm;
   box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
 }
-
 [size="A4"] {
   width: 21cm;
   height: 29.7cm;
 }
-
 p {
   color: red;
+}
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  @page :header {
+    display: none;
+  }
+  @page :footer {
+    display: none;
+  }
+  body * {
+    visibility: hidden;
+  }
+  #print-content,
+  #print-content * {
+    visibility: visible;
+  }
 }

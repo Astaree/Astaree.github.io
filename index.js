@@ -25,8 +25,5 @@ function PrintElem(elem)
 var bt = document.getElementById("printBt");
 
 bt.addEventListener("click",()=>{
-  PrintElem("container");
+  window.print();
 })
-
-var bc = document.getElementById("bcBt");
-bc.addEventListener("click",()=>{window.location.href='../index.html'});
